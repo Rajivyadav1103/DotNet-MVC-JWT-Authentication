@@ -14,5 +14,17 @@ namespace JwtAuthMvcApp.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public JsonResult AddStudent(Student obj)
+        {
+            // Save to database
+            _context.Students.Add(obj);
+            _context.SaveChanges();
+
+            // Return JSON response
+            return Json(new { success = true, message = "Student saved successfully" });
+        }
+
     }
 }

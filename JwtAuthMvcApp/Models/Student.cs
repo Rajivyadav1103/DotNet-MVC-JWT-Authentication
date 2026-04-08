@@ -3,6 +3,16 @@
     public class Student
     {
         
-        public int Id { get; set; }
+        public int StudentId { get; set; }
+
+        public string Name { get; set; }
+
+        public int Age { get; set; }
+        public string course { get; set; }
+        public string Email { get; set; }
+
+        public string PhoneNumber { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime Createddate { get; set; }
     }
 }

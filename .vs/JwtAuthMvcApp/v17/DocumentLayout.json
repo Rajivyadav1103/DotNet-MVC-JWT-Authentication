@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|c:\\users\\dell\\onedrive - padmashree international college\\desktop\\.net class 1\\jwtauthmvcapp\\jwtauthmvcapp\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|solutionrelative:jwtauthmvcapp\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|c:\\users\\dell\\onedrive - padmashree international college\\desktop\\.net class 1\\jwtauthmvcapp\\jwtauthmvcapp\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|solutionrelative:jwtauthmvcapp\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|c:\\users\\dell\\onedrive - padmashree international college\\desktop\\.net class 1\\jwtauthmvcapp\\jwtauthmvcapp\\dao\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|solutionrelative:jwtauthmvcapp\\dao\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|c:\\users\\dell\\onedrive - padmashree international college\\desktop\\.net class 1\\jwtauthmvcapp\\jwtauthmvcapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|solutionrelative:jwtauthmvcapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|c:\\users\\dell\\onedrive - padmashree international college\\desktop\\.net class 1\\jwtauthmvcapp\\jwtauthmvcapp\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|solutionrelative:jwtauthmvcapp\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|c:\\users\\dell\\onedrive - padmashree international college\\desktop\\.net class 1\\jwtauthmvcapp\\jwtauthmvcapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|solutionrelative:jwtauthmvcapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|c:\\users\\dell\\onedrive - padmashree international college\\desktop\\.net class 1\\jwtauthmvcapp\\jwtauthmvcapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|solutionrelative:jwtauthmvcapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|c:\\users\\dell\\onedrive - padmashree international college\\desktop\\.net class 1\\jwtauthmvcapp\\jwtauthmvcapp\\views\\student\\student.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|solutionrelative:jwtauthmvcapp\\views\\student\\student.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|c:\\users\\dell\\onedrive - padmashree international college\\desktop\\.net class 1\\jwtauthmvcapp\\jwtauthmvcapp\\dao\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2372C841-272C-4B35-83B3-9771A811B4AB}|JwtAuthMvcApp\\JwtAuthMvcApp.csproj|solutionrelative:jwtauthmvcapp\\dao\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 189,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,93 +34,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Student.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Models\\Student.cs",
-              "RelativeDocumentMoniker": "JwtAuthMvcApp\\Models\\Student.cs",
-              "ToolTip": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Models\\Student.cs",
-              "RelativeToolTip": "JwtAuthMvcApp\\Models\\Student.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T13:49:13.215Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Program.cs",
-              "RelativeDocumentMoniker": "JwtAuthMvcApp\\Program.cs",
-              "ToolTip": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Program.cs",
-              "RelativeToolTip": "JwtAuthMvcApp\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T13:46:32.562Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\DAO\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "JwtAuthMvcApp\\DAO\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\DAO\\ApplicationDbContext.cs",
               "RelativeToolTip": "JwtAuthMvcApp\\DAO\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T13:43:09.015Z",
+              "WhenOpened": "2026-04-04T15:08:56.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "JwtAuthMvcApp\\Models\\Student.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Models\\Student.cs",
+              "RelativeToolTip": "JwtAuthMvcApp\\Models\\Student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T14:42:56.625Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\appsettings.json",
-              "RelativeDocumentMoniker": "JwtAuthMvcApp\\appsettings.json",
-              "ToolTip": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\appsettings.json",
-              "RelativeToolTip": "JwtAuthMvcApp\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-04T07:41:26.989Z",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "JwtAuthMvcApp\\Views\\Student\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "JwtAuthMvcApp\\Views\\Student\\Index.cshtml",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAcwEQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-04T14:42:10.954Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "StudentController.cs",
               "DocumentMoniker": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Controllers\\StudentController.cs",
               "RelativeDocumentMoniker": "JwtAuthMvcApp\\Controllers\\StudentController.cs",
               "ToolTip": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Controllers\\StudentController.cs",
               "RelativeToolTip": "JwtAuthMvcApp\\Controllers\\StudentController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T07:40:23.817Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Student.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Views\\Student\\Student.cshtml",
-              "RelativeDocumentMoniker": "JwtAuthMvcApp\\Views\\Student\\Student.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Views\\Student\\Student.cshtml",
-              "RelativeToolTip": "JwtAuthMvcApp\\Views\\Student\\Student.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-04T13:39:40.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "JwtAuthMvcApp\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Dell\\OneDrive - padmashree International College\\Desktop\\.net class 1\\JwtAuthMvcApp\\JwtAuthMvcApp\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "JwtAuthMvcApp\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T07:39:33.104Z",
+              "WhenOpened": "2026-04-04T14:32:39.375Z",
               "EditorCaption": ""
             }
           ]
