@@ -9,10 +9,11 @@
                         <label>StudentName</label>
                         <input type="text" class="form-control txtstudentname" />
                     </div>
+
                     <div class="col-md-12">
                         <label>Age</label>
-                        <input type="text" class="form-control  StudentAge" />
-                    </div><br />
+                        <input type="text" class="form-control StudentAge" />
+                    </div>
 
                     <div class="col-md-12">
                         <label>Course</label>
@@ -23,57 +24,32 @@
                         <label>Email</label>
                         <input type="text" class="form-control txtemail" />
                     </div>
+
                     <div class="col-md-12">
                         <label>PhoneNumber</label>
                         <input type="text" class="form-control txtphonenumber" />
                     </div>
-                    <div class="col-md-12">
-                        <br />
-                        <button type="button" class="btn btn-danger btnCancel"><i class="fa-solid fa-magnifying-glass"></i>Cancel</button>
-                        <button type="button" class="btn btn-success btnAdd"><i class="fa-solid fa-address-book"></i> Add Students</button>
+
+                    <div class="col-md-12 mt-2">
+                        <button type="button" class="btn btn-danger btnCancel">Cancel</button>
+                        <button type="button" class="btn btn-success btnAdd">Add Students</button>
                     </div>
 
                 </div>
-
             </div>
-
         </div>
     </div>
 
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>search Name</label>
-                        <input type="text" class="form-control searchName" />
-                    </div>
-
-                    <div class="col-md-3">
-                        <label>Search Email</label>
-                        <input type="text" class="form-control Searchemail" />
-                    </div>
-
-                    <div class="col-md-3 mt-4">
-                        <button type="button" class="btn btn-danger btnsearchcancel">cancel</button>
-                        <button type="button" class="btn btn-primary btnserach">Search</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div> 
-    
 </div>
 
 <div class="row mt-3">
     <div class="col-md-8">
-        <div class="card>">
-            <div class="card-body"style="overflow:auto;" >
-                <!-- Table to show students -->
-                <table class="table table table-hover" id="studentTable">
+        <div class="card">
+            <div class="card-body" style="overflow:auto;">
+                <table class="table table-hover" id="studentTable">
                     <thead>
                         <tr>
+                            @* <th>#</th> *@
                             <th>Name</th>
                             <th>Age</th>
                             <th>Course</th>
@@ -81,8 +57,7 @@
                             <th>Phone</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <!-- Students will be appended here -->
+                    <tbody class="main-data">
                     </tbody>
                 </table>
             </div>
@@ -91,67 +66,79 @@
 </div>
 
 @section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         $(document).ready(function () {
 
-            $(document).on('click','.btnancel',function(){
-                var ok =confirm("are you sure to cancel the form ?");
-                if (ok == true){
+             // ✅ MUST have toastr.options
+    toastr.options = {
+        "closeButton": true,          // shows close button
+       
+        "positionClass": "toast-top-right", // position
+        
+    };
+
+            loadData();
+        });
+
+        // SAVE
+        $(document).on('click', '.btnAdd', function () {
+
+            var xyz = {
+                Name: $('.txtstudentname').val(),                // ✅ FIX (StudentName → Name)
+                Age: parseInt($('.StudentAge').val()),           // ✅ FIX (string → int)
+                Course: $('.txtcourse').val(),                   // ✅ FIX (Course)
+                Email: $('.txtemail').val(),
+                PhoneNumber: $('.txtphonenumber').val()
+            };
+
+            if (!xyz.Name || !xyz.Age || !xyz.Course || !xyz.Email || !xyz.PhoneNumber) {
+                // alert("All fields required");
+                toastr.success(res.message);
+                return;
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("AddStudent", "Student")',
+                data: JSON.stringify(xyz),
+                contentType: 'application/json; charset=utf-8',
+                success: function (res) {
+                    // alert(res.message);
+                    toastr.success(res.message);
                     clearForm();
+                    loadData();
                 }
-            });
-
-            $(document).on('click', '.btnAdd', function () {
-
-                var xyz = {
-                    StudentName: $('.txtstudentname').val().trim(),
-                    StudentAge: $('.StudentAge').val().trim(),
-                    StudentCourse: $('.txtcourse').val().trim(),
-                    StudentEmail: $('.txtemail').val().trim(),
-                    StudentPhoneNumber: $('.txtphonenumber').val().trim()
-                };
-
-                if (xyz.StudentName === "") {
-                    toastr.error("Enter your full name", "Error");
-                }
-                else if (xyz.StudentAge === "") {
-                    toastr.error("Enter your age", "Error");
-                }
-                else if (xyz.StudentCourse === "") {
-                    toastr.error("Enter your course", "Error");
-                }
-                else if (xyz.StudentEmail === "") {
-                    toastr.error("Enter your email", "Error");
-                }
-                else if (xyz.StudentPhoneNumber === "") {
-                    toastr.error("Enter your phone number", "Error");
-                }
-                else {
-
-                    $.ajax({
-                        type: 'POST',   // ✅ must match controller
-                        url: '@Url.Action("AddStudent", "Student")',
-                        data: xyz,
-                        success: function (res) {
-
-                            if (res.success) {
-                                toastr.success(res.message, "Success");
-                                clearForm();
-                            } else {
-                                toastr.error(res.message, "Error");
-                            }
-                        },
-                        error: function () {
-                            toastr.error("Something went wrong");
-                        }
-                    });
-
-                }
-
             });
 
         });
 
+        // LOAD DATA
+        function loadData() {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("GetStudents", "Student")',
+                success: function (data) {
+
+                    var html = '';
+
+                    $.each(data, function (index, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.name + '</td>';         // ✅ match model
+                        html += '<td>' + item.age + '</td>';
+                        html += '<td>' + item.course + '</td>';
+                        html += '<td>' + item.email + '</td>';
+                        html += '<td>' + item.phoneNumber + '</td>';
+                        html += '</tr>';
+                    });
+
+                    $('.main-data').html(html);
+                }
+            });
+        }
+
+        // CLEAR
         function clearForm() {
             $('.txtstudentname').val('');
             $('.StudentAge').val('');

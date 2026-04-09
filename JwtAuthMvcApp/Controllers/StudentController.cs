@@ -14,16 +14,33 @@ namespace JwtAuthMvcApp.Controllers
         {
             return View();
         }
-
+        // ===== SAVE =====
         [HttpPost]
-        public JsonResult AddStudent(Student obj)
+        public JsonResult AddStudent([FromBody] Student obj)
         {
-            // Save to database
+            if (obj == null)
+            {
+                return Json(new { success = false, message = "Invalid data" });
+            }
+
+            obj.IsActive = true; // ✅ default
+            obj.Createddate = DateTime.Now; // ✅ auto date
+
             _context.Students.Add(obj);
             _context.SaveChanges();
 
-            // Return JSON response
             return Json(new { success = true, message = "Student saved successfully" });
+        }
+
+        // ===== LOAD =====
+        [HttpGet]
+        public JsonResult GetStudents()
+        {
+            var data = _context.Students
+                               .Where(x => x.IsActive == true) // ✅ only active
+                               .ToList();
+
+            return Json(data);
         }
 
     }
