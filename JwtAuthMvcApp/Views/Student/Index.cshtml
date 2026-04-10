@@ -43,18 +43,20 @@
 </div>
 
 <div class="row mt-3">
-    <div class="col-md-8">
+    <div class="col-md-12">
         <div class="card">
             <div class="card-body" style="overflow:auto;">
                 <table class="table table-hover" id="studentTable">
                     <thead>
                         <tr>
-                            @* <th>#</th> *@
+                            <th>SN</th>
                             <th>Name</th>
                             <th>Age</th>
                             <th>Course</th>
                             <th>Email</th>
                             <th>Phone</th>
+                            <th>Action</th>
+
                         </tr>
                     </thead>
                     <tbody class="main-data">
@@ -81,6 +83,20 @@
 
             loadData();
         });
+
+
+      $(document).on('click','.btnCancel',function(){
+
+          var ok =confirm ("are you sure to cancel the form?");
+
+          if(ok ==true){
+              clearForm();
+          }
+
+      });
+
+
+
 
         // SAVE
         $(document).on('click', '.btnAdd', function () {
@@ -125,11 +141,16 @@
 
                     $.each(data, function (index, item) {
                         html += '<tr>';
+                             html += '<td>' + (index + 1 )+ '</td>';
                         html += '<td>' + item.name + '</td>';         // ✅ match model
                         html += '<td>' + item.age + '</td>';
                         html += '<td>' + item.course + '</td>';
                         html += '<td>' + item.email + '</td>';
                         html += '<td>' + item.phoneNumber + '</td>';
+                                  // html += '<td><button class="btn btn-primary btnedit   btn-sm me-1"  data-key=" '+ item.StudentId +'  "  >Edit</button><button class="btn btndelete btn-danger btn-sm">Delete</button></td>';
+
+                                      html += '<td><button class="btn btn-primary btnedit btn-sm me-1" data-key="' + item.studentId + '">Edit</button><button class="btn btndelete btn-danger btn-sm">Delete</button></td>';
+
                         html += '</tr>';
                     });
 
@@ -137,6 +158,63 @@
                 }
             });
         }
+
+
+                 $(document).on('click', '.btnAdd', function () {
+
+            var id = $(this).attr('data-id'); // ✅ get id (if edit)
+
+            var xyz = {
+                StudentId: id ? parseInt(id) : 0,
+                Name: $('.txtstudentname').val(),
+                Age: parseInt($('.StudentAge').val()),
+                Course: $('.txtcourse').val(),
+                Email: $('.txtemail').val(),
+                PhoneNumber: $('.txtphonenumber').val()
+            };
+
+            if (!xyz.Name || !xyz.Age || !xyz.Course || !xyz.Email || !xyz.PhoneNumber) {
+                toastr.error("All fields required"); // ✅ FIX (was wrong)
+                return;
+            }
+
+            var url = id
+                ? '@Url.Action("UpdateStudent", "Student")'   // ✅ UPDATE
+                : '@Url.Action("AddStudent", "Student")';     // ✅ ADD
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: JSON.stringify(xyz),
+                contentType: 'application/json; charset=utf-8',
+                success: function (res) {
+                    toastr.success(res.message);
+                    clearForm();
+                    $('.btnAdd').removeAttr('data-id'); // ✅ reset
+                    $('.btnAdd').text('Add Students');  // ✅ reset button text
+                    loadData();
+                }
+            });
+
+        });
+
+
+               $(document).on('click', '.btndelete', function () {
+
+            var key = $(this).closest('tr').find('.btnedit').data('key');
+
+            if (confirm("Are you sure to delete?")) {
+                $.ajax({
+                    type: 'DELETE',
+                    url: '@Url.Action("DeleteStudent", "Student")?id=' + key,
+                    success: function (res) {
+                        toastr.success(res.message);
+                        loadData();
+                    }
+                });
+            }
+
+        });
 
         // CLEAR
         function clearForm() {
