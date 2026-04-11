@@ -1,4 +1,4 @@
-using JwtAuthMvcApp.DAO;
+﻿using JwtAuthMvcApp.DAO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using JwtAuthMvcApp.Models;
@@ -11,6 +11,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("PrimaryConnnection"));
 });
+
+builder.Services.AddAuthorization();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -28,8 +30,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication(); // ✅ IMPORTANT
 app.UseAuthorization();
+
+
 
 app.MapControllerRoute(
     name: "default",

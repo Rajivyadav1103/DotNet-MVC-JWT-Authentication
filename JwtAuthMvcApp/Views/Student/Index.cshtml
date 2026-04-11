@@ -1,18 +1,17 @@
 ﻿<div class="row">
-
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
                 <div class="row">
 
                     <div class="col-md-12">
-                        <label>StudentName</label>
+                        <label>Student Name</label>
                         <input type="text" class="form-control txtstudentname" />
                     </div>
 
                     <div class="col-md-12">
                         <label>Age</label>
-                        <input type="text" class="form-control StudentAge" />
+                        <input type="number" class="form-control StudentAge" />
                     </div>
 
                     <div class="col-md-12">
@@ -22,11 +21,11 @@
 
                     <div class="col-md-12">
                         <label>Email</label>
-                        <input type="text" class="form-control txtemail" />
+                        <input type="email" class="form-control txtemail" />
                     </div>
 
                     <div class="col-md-12">
-                        <label>PhoneNumber</label>
+                        <label>Phone Number</label>
                         <input type="text" class="form-control txtphonenumber" />
                     </div>
 
@@ -39,14 +38,14 @@
             </div>
         </div>
     </div>
-
 </div>
 
+<!-- TABLE -->
 <div class="row mt-3">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body" style="overflow:auto;">
-                <table class="table table-hover" id="studentTable">
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th>SN</th>
@@ -56,11 +55,9 @@
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Action</th>
-
                         </tr>
                     </thead>
-                    <tbody class="main-data">
-                    </tbody>
+                    <tbody class="main-data"></tbody>
                 </table>
             </div>
         </div>
@@ -69,154 +66,121 @@
 
 @section scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
         $(document).ready(function () {
 
-             // ✅ MUST have toastr.options
-    toastr.options = {
-        "closeButton": true,          // shows close button
-       
-        "positionClass": "toast-top-right", // position
-        
-    };
+            toastr.options = {
+                closeButton: true,
+                positionClass: "toast-top-right"
+            };
 
             loadData();
         });
 
 
-      $(document).on('click','.btnCancel',function(){
-
-          var ok =confirm ("are you sure to cancel the form?");
-
-          if(ok ==true){
-              clearForm();
-          }
-
-      });
-
-
-
-
-        // SAVE
+        // ================= ADD / UPDATE =================
         $(document).on('click', '.btnAdd', function () {
 
-            var xyz = {
-                Name: $('.txtstudentname').val(),                // ✅ FIX (StudentName → Name)
-                Age: parseInt($('.StudentAge').val()),           // ✅ FIX (string → int)
-                Course: $('.txtcourse').val(),                   // ✅ FIX (Course)
-                Email: $('.txtemail').val(),
-                PhoneNumber: $('.txtphonenumber').val()
-            };
-
-            if (!xyz.Name || !xyz.Age || !xyz.Course || !xyz.Email || !xyz.PhoneNumber) {
-                // alert("All fields required");
-                toastr.success(res.message);
-                return;
-            }
-
-            $.ajax({
-                type: 'POST',
-                url: '@Url.Action("AddStudent", "Student")',
-                data: JSON.stringify(xyz),
-                contentType: 'application/json; charset=utf-8',
-                success: function (res) {
-                    // alert(res.message);
-                    toastr.success(res.message);
-                    clearForm();
-                    loadData();
-                }
-            });
-
-        });
-
-        // LOAD DATA
-        function loadData() {
-            $.ajax({
-                type: 'GET',
-                url: '@Url.Action("GetStudents", "Student")',
-                success: function (data) {
-
-                    var html = '';
-
-                    $.each(data, function (index, item) {
-                        html += '<tr>';
-                             html += '<td>' + (index + 1 )+ '</td>';
-                        html += '<td>' + item.name + '</td>';         // ✅ match model
-                        html += '<td>' + item.age + '</td>';
-                        html += '<td>' + item.course + '</td>';
-                        html += '<td>' + item.email + '</td>';
-                        html += '<td>' + item.phoneNumber + '</td>';
-                                  // html += '<td><button class="btn btn-primary btnedit   btn-sm me-1"  data-key=" '+ item.StudentId +'  "  >Edit</button><button class="btn btndelete btn-danger btn-sm">Delete</button></td>';
-
-                                      html += '<td><button class="btn btn-primary btnedit btn-sm me-1" data-key="' + item.studentId + '">Edit</button><button class="btn btndelete btn-danger btn-sm">Delete</button></td>';
-
-                        html += '</tr>';
-                    });
-
-                    $('.main-data').html(html);
-                }
-            });
-        }
-
-
-                 $(document).on('click', '.btnAdd', function () {
-
-            var id = $(this).attr('data-id'); // ✅ get id (if edit)
+            var id = $(this).attr('data-id');
 
             var xyz = {
                 StudentId: id ? parseInt(id) : 0,
                 Name: $('.txtstudentname').val(),
                 Age: parseInt($('.StudentAge').val()),
-                Course: $('.txtcourse').val(),
+                course: $('.txtcourse').val(),   // ✅ small c
                 Email: $('.txtemail').val(),
                 PhoneNumber: $('.txtphonenumber').val()
             };
 
-            if (!xyz.Name || !xyz.Age || !xyz.Course || !xyz.Email || !xyz.PhoneNumber) {
-                toastr.error("All fields required"); // ✅ FIX (was wrong)
+            if (!xyz.Name || !xyz.Age || !xyz.course || !xyz.Email || !xyz.PhoneNumber) {
+                toastr.error("All fields required");
                 return;
             }
 
             var url = id
-                ? '@Url.Action("UpdateStudent", "Student")'   // ✅ UPDATE
-                : '@Url.Action("AddStudent", "Student")';     // ✅ ADD
+                ? '@Url.Action("UpdateStudent", "Student")'
+                : '@Url.Action("AddStudent", "Student")';
 
             $.ajax({
                 type: 'POST',
                 url: url,
                 data: JSON.stringify(xyz),
-                contentType: 'application/json; charset=utf-8',
+                contentType: 'application/json',
                 success: function (res) {
                     toastr.success(res.message);
                     clearForm();
-                    $('.btnAdd').removeAttr('data-id'); // ✅ reset
-                    $('.btnAdd').text('Add Students');  // ✅ reset button text
+                    $('.btnAdd').removeAttr('data-id').text('Add Students');
                     loadData();
                 }
             });
-
         });
 
 
-               $(document).on('click', '.btndelete', function () {
+        // ================= LOAD =================
+        function loadData() {
+            $.get('@Url.Action("GetStudents", "Student")', function (data) {
 
-            var key = $(this).closest('tr').find('.btnedit').data('key');
+                var html = '';
 
-            if (confirm("Are you sure to delete?")) {
+                $.each(data, function (i, item) {
+                    html += `<tr>
+                                <td>${i + 1}</td>
+                                <td>${item.name}</td>
+                                <td>${item.age}</td>
+                                <td>${item.course}</td>
+                                <td>${item.email}</td>
+                                <td>${item.phoneNumber}</td>
+                                <td>
+                                    <button class="btn btn-primary btnedit btn-sm" data-id="${item.studentId}">Edit</button>
+                                    <button class="btn btn-danger btndelete btn-sm">Delete</button>
+                                </td>
+                             </tr>`;
+                });
+
+                $('.main-data').html(html);
+            });
+        }
+
+
+        // ================= EDIT =================
+        $(document).on('click', '.btnedit', function () {
+
+            var row = $(this).closest('tr');
+
+            $('.txtstudentname').val(row.find('td:eq(1)').text());
+            $('.StudentAge').val(row.find('td:eq(2)').text());
+            $('.txtcourse').val(row.find('td:eq(3)').text());
+            $('.txtemail').val(row.find('td:eq(4)').text());
+            $('.txtphonenumber').val(row.find('td:eq(5)').text());
+
+            var id = $(this).data('id');
+
+            $('.btnAdd').attr('data-id', id).text('Update Student');
+        });
+
+
+        // ================= DELETE =================
+        $(document).on('click', '.btndelete', function () {
+
+            var id = $(this).closest('tr').find('.btnedit').data('id');
+
+            if (confirm("Delete this record?")) {
                 $.ajax({
                     type: 'DELETE',
-                    url: '@Url.Action("DeleteStudent", "Student")?id=' + key,
+                    url: '@Url.Action("DeleteStudent", "Student")?id=' + id,
                     success: function (res) {
                         toastr.success(res.message);
                         loadData();
                     }
                 });
             }
-
         });
 
-        // CLEAR
+
+        // ================= CLEAR =================
         function clearForm() {
             $('.txtstudentname').val('');
             $('.StudentAge').val('');
@@ -224,5 +188,10 @@
             $('.txtemail').val('');
             $('.txtphonenumber').val('');
         }
+
+        $(document).on('click', '.btnCancel', function () {
+            clearForm();
+            $('.btnAdd').removeAttr('data-id').text('Add Students');
+        });
     </script>
 }
